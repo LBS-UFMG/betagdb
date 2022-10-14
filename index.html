@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="pt-br">
+	<head>
+
+		<meta charset="UTF-8">
+		<title>betagdb | Database of glucose-tolerant beta-glucosidases</title>
+
+		<!-- CSS -->
+		<link type="text/css" rel="stylesheet" href="css/datatables.css" />
+		<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/bootstrap-theme.min.css" />
+		<link type="text/css" rel="stylesheet" href="css/style.css" />
+		<!-- End -->	
+
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="img/favicon.png" />
+		<!-- End -->
+
+		<!-- Codigos relacionados a compatibilidade com IE -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- End -->
+
+	</head>
+	
+	<body>
+
+		<!-- content home -->
+		<div class="container-fluid">
+			<div class="row">
+
+				<aside class="col-md-3" id="menu">
+
+					<!-- logo -->
+					<img src="img/logo.png" class="img-responsive" />
+
+					<!-- menu superior -->
+					<div id="menu_interno">
+						
+						<a href="#list_of_references" class="sub_menu"  data-toggle="modal" data-target="#list_of_references"><span class="glyphicon glyphicon-th-list" aria-hidden="true" title="List of references"></span></a>
+
+						<a href="#align" class="sub_menu" data-toggle="modal" data-target="#align"><span class="glyphicon glyphicon-picture" aria-hidden="true" title="Align"></span></a>
+
+						<a href="#download" class="sub_menu" data-toggle="modal" data-target="#download"><span class="glyphicon glyphicon-download-alt" aria-hidden="true" title="Download all database"></span></a>
+
+						<a href="#about" class="sub_menu" data-toggle="modal" alt="Click to more information about this website" data-target="#about"><span class="glyphicon glyphicon-question-sign" aria-hidden="true" title="About"></span></a>
+
+						<!--MODAL ABOUT -->
+						<div class="modal fade" id="about" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <div class="modal-header">						      	
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-family: Arial;"><span aria-hidden="true" style="font-family: Arial;">×</span></button>
+								<h3>About</h3>
+						      </div>
+						      <div class="modal-body">
+						      	<center><img src="img/logo.png" class="img-responsive"  /></center><br/>
+						      	<p style="font-size:18px">The betagdb is a database with sequences of glucose-tolerant beta-glucosidases. We also performed tridimensional modelage using MODELLER (https://salilab.org/modeller). We also used 3DMOL (http://3dmol.csb.pitt.edu) to show the tridimensional structures.</p>
+						      	<p>Cite: Mariano et al. betagdb. Available at: < http://thames.dcc.ufmg.br/betagdb >.</p></div>
+						      <div class="modal-footer">
+						      	<a class="btn btn-default" aria-label="Close" data-dismiss="modal">Close</a>
+						      </div>
+						    </div>						    
+						  </div>
+						</div>
+						<!-- FIM MODALS -->
+
+						<!--MODAL ALIGN -->
+						<div class="modal fade" id="align" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <div class="modal-header">						      	
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-family: Arial;"><span aria-hidden="true" style="font-family: Arial;">×</span></button>
+								<h3>Alignment among 21 GH1 and between two GH3</h3>
+						      </div>
+						      <div class="modal-body">
+						      	<h4>GH1</h4>
+						      	<center><img src="img/gh1.png" class="img-responsive"  /></center><br/>
+						      	<i style="color:#bbb">
+						      		Bacillus subtilis, Uncultured bacterium (Metagenome China South Sea), Uncultured bacterium (Metagenome Turpan Depression), Exiguobacterium antarcticum B7, Uncultured bacterium (Metagenome Kusaya gravy), Thermoanaerobacterium aotearoense, Humicola grisea var. thermoidea, Uncultured bacterium (Metagenome soil), Thermoanaerobacterium thermosaccharolyticum, Fervidobacterium islandicum, Hypocrea jecorina (Trichoderma reesei), Thermotoga naphthophila, Caldicellulosiruptor bescii, Neurospora crassa, Thermotoga petrophila, Acidilobus saccharovorans, Uncultured bacterium (Metagenome hydrothermal spring), Neotermes koshunensis, Thermoanaerobacter brockii, Nasutitermes takasagoensis</i><hr />
+
+						      	<h4>GH3</h4>
+						      	<center><img src="img/gh3.png" class="img-responsive"  /></center><br/>
+						      	<i style="color:#bbb">Mucor circinelloides, Talaromyces funiculosus (Penicillium funiculosum)</i>
+						      	</div>
+						      <div class="modal-footer">
+						      	<a class="btn btn-default" aria-label="Close" data-dismiss="modal">Close</a>
+						      </div>
+						    </div>						    
+						  </div>
+						</div>
+						<!-- FIM MODALS -->
+
+						<!--MODAL LIST -->
+						<div class="modal fade" id="list_of_references" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <div class="modal-header">						      	
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-family: Arial;"><span aria-hidden="true" style="font-family: Arial;">×</span></button>
+								<h3>List of references</h3>
+						      </div>
+						      <div class="modal-body">
+<table class="display" id="organisms_info"><!--table table-condensed table-striped table-hover-->
+<thead>
+<tr>
+	<th>#</th>	
+	<th>Organism</th>
+	<th>UniProt</th>
+	<th>GHF</th>
+	<th>Temp</th>
+	<th>pH</th>
+	<th>Km</th>
+	<th>Source</th>
+</tr>
+ </thead>
+ <tbody>
+<tr><td>	1	</td><td>	<i>Bacillus subtilis</i>	</td><td>	I3QIG4	</td><td>	1	</td><td>	60	</td><td>	6	</td><td>	ND*	</td><td>	Chamoli et al. [1]	</td></tr>
+<tr><td>	2	</td><td>	<i>Uncultured bacterium (Metagenome China South Sea)</i>	</td><td>	D5KX75	</td><td>	1	</td><td>	40	</td><td>	6.5	</td><td>	20.4	</td><td>	Yang et al. [2]	</td></tr>
+<tr><td>	3	</td><td>	<i>Uncultured bacterium (Metagenome Turpan Depression)</i>	</td><td>	A0A0F7KKB7	</td><td>	1	</td><td>	50	</td><td>	5	</td><td>	ND*	</td><td>	Cao et al. [3]	</td></tr>
+<tr><td>	4	</td><td>	<i>Exiguobacterium antarcticum B7</i>	</td><td>	K0A8J9	</td><td>	1	</td><td>	30	</td><td>	7	</td><td>	6.18	</td><td>	Crespim et al. [4]	</td></tr>
+<tr><td>	5	</td><td>	<i>Uncultured bacterium (Metagenome Kusaya gravy)</i>	</td><td>	ND*	</td><td>	1	</td><td>	45	</td><td>	5-6.5	</td><td>	0.36	</td><td>	Uchiyama et al. [5]	</td></tr>
+<tr><td>	6	</td><td>	<i>Thermoanaerobacterium aotearoense</i>	</td><td>	A0A0H4NXH8	</td><td>	1	</td><td>	60	</td><td>	6	</td><td>	ND*	</td><td>	Yang et al. [6]	</td></tr>
+<tr><td>	7	</td><td>	<i>Talaromyces funiculosus (Penicillium funiculosum)</i>	</td><td>	K4KB38	</td><td>	3	</td><td>	60	</td><td>	5	</td><td>	1.25	</td><td>	Ramani et al. [7]	</td></tr>
+<tr><td>	8	</td><td>	<i>Humicola grisea var. thermoidea</i>	</td><td>	O93784	</td><td>	1	</td><td>	40	</td><td>	6	</td><td>	 ND*	</td><td>	de Giuseppe et al. [8]; Benoliel et al. [9]	</td></tr>
+<tr><td>	9	</td><td>	<i>Uncultured bacterium (Metagenome soil)</i>	</td><td>	K4I4U1	</td><td>	1	</td><td>	50	</td><td>	6	</td><td>	2.09	</td><td>	Lu et al. [10]	</td></tr>
+<tr><td>	10	</td><td>	<i>Thermoanaerobacterium thermosaccharolyticum</i>	</td><td>	D9TR57	</td><td>	1	</td><td>	70	</td><td>	6.4	</td><td>	7.9	</td><td>	Pei et al. [11]	</td></tr>
+<tr><td>	11	</td><td>	<i>Fervidobacterium islandicum</i>	</td><td>	G8YZD7	</td><td>	1	</td><td>	90	</td><td>	7	</td><td>	ND*	</td><td>	Jabbour et al. [12]	</td></tr>
+<tr><td>	12	</td><td>	<i>Mucor circinelloides</i>	</td><td>	ND*	</td><td>	3	</td><td>	50	</td><td>	5	</td><td>	4.55	</td><td>	Huang et al. [13]	</td></tr>
+<tr><td>	13	</td><td>	<i>Hypocrea jecorina (Trichoderma reesei)</i>	</td><td>	O93785	</td><td>	1	</td><td>	30-40	</td><td>	5-7	</td><td>	2.48	</td><td>	Guo et al. [14]	</td></tr>
+<tr><td>	14	</td><td>	<i>Thermotoga naphthophila</i>	</td><td>	D2C6W2	</td><td>	1	</td><td>	80	</td><td>	7	</td><td>	7.76	</td><td>	Akram et al. [15]	</td></tr>
+<tr><td>	15	</td><td>	<i>Caldicellulosiruptor bescii</i>	</td><td>	B9MNR1	</td><td>	1	</td><td>	85	</td><td>	6.8	</td><td>	90.8	</td><td>	Bai et al. [16]	</td></tr>
+<tr><td>	16	</td><td>	<i>Neurospora crassa</i>	</td><td>	U9W8B8	</td><td>	1	</td><td>	40-45	</td><td>	5.5-6.5	</td><td>	0.21	</td><td>	Meleiro et al. [18]	</td></tr>
+<tr><td>	17	</td><td>	<i>Pyrococcus furiosus	</td><td>	E7FHY4	</td><td>	1	</td><td>	> 80	</td><td>	ND*	</td><td>	ND*	</td><td>	Cota et al. [19]	</td></tr>
+<tr><td>	18	</td><td>	<i>Thermotoga petrophila</i>	</td><td>	A5IL97	</td><td>	1	</td><td>	> 80	</td><td>	ND*	</td><td>	ND*	</td><td>	Cota et al. [19]	</td></tr>
+<tr><td>	19	</td><td>	<i>Acidilobus saccharovorans</i>	</td><td>	D9PZ08	</td><td>	1	</td><td>	93	</td><td>	6	</td><td>	ND*	</td><td>	Gumerov et al. [20]	</td></tr>
+<tr><td>	20	</td><td>	<i>Uncultured bacterium (Metagenome hydrothermal spring)</i> 	</td><td>	W8W3B8	</td><td>	1	</td><td>	90	</td><td>	6.5	</td><td>	ND*	</td><td>	Schröder et al. [21]	</td></tr>
+<tr><td>	21	</td><td>	<i>Neotermes koshunensis</i>	</td><td>	Q8T0W7	</td><td>	1	</td><td>	50	</td><td>	5	</td><td>	ND*	</td><td>	Uchima et al. [22]; de Giuseppe et al. [8]	</td></tr>
+<tr><td>	22	</td><td>	<i>Thermoanaerobacter brockii</i>	</td><td>	Q60026	</td><td>	1	</td><td>	ND*	</td><td>	ND*	</td><td>	ND*	</td><td>	Breves et al. [23]	</td></tr>
+<tr><td>	23	</td><td>	<i>Nasutitermes takasagoensis</i> 	</td><td>	D0VYR9	</td><td>	1	</td><td>	65	</td><td>	5.5	</td><td>	ND*	</td><td>	Uchima et al. [24]	</td></tr>
+</tbody>
+</table>
+
+<p>* ND not determined.</p>
+
+<pre>
+1. Chamoli S, Kumar P, Navani NK, Verma AK. Secretory expression, characterization and docking study of glucose-tolerant β-glucosidase from B. subtilis. Int. J. Biol. Macromol. 2016;85:425–33. 
+2. Yang Y, Zhang X, Yin Q, Fang W, Fang Z, Wang X, et al. A mechanism of glucose tolerance and stimulation of GH1 β-glucosidases. Sci. Rep. 2015;5:17296. 
+3. Cao L, Wang Z, Ren G, Kong W, Li L, Xie W, et al. Engineering a novel glucose-tolerant β-glucosidase as supplementation to enhance the hydrolysis of sugarcane bagasse at high glucose concentration. Biotechnol. Biofuels [Internet]. 2015 [cited 2016 Feb 17];8. Available from: http://www.biotechnologyforbiofuels.com/content/8/1/202
+4. Crespim E, Zanphorlin LM, de Souza FHM, Diogo JA, Gazolla AC, Machado CB, et al. A novel cold-adapted and glucose-tolerant GH1 β-glucosidase from Exiguobacterium antarcticum B7. Int. J. Biol. Macromol. 2016;82:375–80. 
+5. Uchiyama T, Yaoi K, Miyazaki K. Glucose-tolerant β-glucosidase retrieved from a Kusaya gravy metagenome. Front. Microbiol. [Internet]. 2015 [cited 2016 Feb 17];6. Available from: http://journal.frontiersin.org/Article/10.3389/fmicb.2015.00548/abstract
+6. Yang F, Yang X, Li Z, Du C, Wang J, Li S. Overexpression and characterization of a glucose-tolerant β-glucosidase from T. aotearoense with high specific activity for cellobiose. Appl. Microbiol. Biotechnol. 2015;99:8903–15. 
+7. Ramani G, Meera B, Vanitha C, Rajendhran J, Gunasekaran P. Molecular cloning and expression of thermostable glucose-tolerant β-glucosidase of Penicillium funiculosum NCL1 in Pichia pastoris and its characterization. J. Ind. Microbiol. Biotechnol. 2015;42:553–65. 
+8. de Giuseppe PO, Souza T de ACB, Souza FHM, Zanphorlin LM, Machado CB, Ward RJ, et al. Structural basis for glucose tolerance in GH1 β-glucosidases. Acta Crystallogr. D Biol. Crystallogr. 2014;70:1631–9. 
+9. Benoliel B, Poças-Fonseca MJ, Torres FAG, de Moraes LMP. Expression of a Glucose-tolerant β-glucosidase from Humicola grisea var. thermoidea in Saccharomyces cerevisiae. Appl. Biochem. Biotechnol. 2010;160:2036–44. 
+10. Lu J, Du L, Wei Y, Hu Y, Huang R. Expression and characterization of a novel highly glucose-tolerant β-glucosidase from a soil metagenome. Acta Biochim. Biophys. Sin. 2013;45:664–73. 
+11. Pei J, Pang Q, Zhao L, Fan S, Shi H. Thermoanaerobacterium thermosaccharolyticum β-glucosidase: a glucose-tolerant enzyme with high specific activity for cellobiose. Biotechnol Biofuels. 2012;5:1–10. 
+12. Jabbour D, Klippel B, Antranikian G. A novel thermostable and glucose-tolerant β-glucosidase from Fervidobacterium islandicum. Appl. Microbiol. Biotechnol. 2012;93:1947–56. 
+13. Huang Y, Busk PK, Grell MN, Zhao H, Lange L. Identification of a β-glucosidase from the Mucor circinelloides genome by peptide pattern recognition. Enzyme Microb. Technol. 2014;67:47–52. 
+14. Guo B, Amano Y, Nozaki K. Improvements in Glucose Sensitivity and Stability of Trichoderma reesei β-Glucosidase Using Site-Directed Mutagenesis. Silman I, editor. PLOS ONE. 2016;11:e0147301. 
+15. Akram F, Haq I ul, Khan MA, Hussain Z, Mukhtar H, Iqbal K. Cloning with kinetic and thermodynamic insight of a novel hyperthermostable β-glucosidase from Thermotoga naphthophila RKU-10T with excellent glucose tolerance. J. Mol. Catal. B Enzym. 2016;124:92–104. 
+16. Bai A, Zhao X, Jin Y, Yang G, Feng Y. A novel thermophilic β-glucosidase from Caldicellulosiruptor bescii: Characterization and its synergistic catalysis with other cellulases. J. Mol. Catal. B Enzym. 2013;85–86:248–56. 
+17. Meleiro LP, Salgado JCS, Maldonado RF, Alponti JS, Zimbardi ALRL, Jorge JA, et al. A Neurospora crassa ß-glucosidase with potential for lignocellulose hydrolysis shows strong glucose tolerance and stimulation by glucose and xylose. J. Mol. Catal. B Enzym. 2015;122:131–40. 
+18. Cota J, Corrêa TLR, Damásio ARL, Diogo JA, Hoffmam ZB, Garcia W, et al. Comparative analysis of three hyperthermophilic GH1 and GH3 family members with industrial potential. New Biotechnol. 2015;32:13–20. 
+19. Gumerov VM, Rakitin AL, Mardanov AV, Ravin NV, Gumerov VM, Rakitin AL, et al. A Novel Highly Thermostable Multifunctional Beta-Glycosidase from Crenarchaeon Acidilobus saccharovorans, A Novel Highly Thermostable Multifunctional Beta-Glycosidase from Crenarchaeon Acidilobus saccharovorans. Archaea Archaea. 2015;2015, 2015:e978632. 
+20. Schröder C, Elleuche S, Blank S, Antranikian G. Characterization of a heat-active archaeal β-glucosidase from a hydrothermal spring metagenome. Enzyme Microb. Technol. 2014;57:48–54. 
+21. Uchima CA, Tokuda G, Watanabe H, Kitamoto K, Arioka M. Heterologous expression and characterization of a glucose-stimulated β-glucosidase from the termite Neotermes koshunensis in Aspergillus oryzae. Appl. Microbiol. Biotechnol. 2011;89:1761–71. 
+22. Breves R, Bronnenmeier K, Wild N, Lottspeich F, Staudenbauer WL, Hofemeister J. Genes encoding two different beta-glucosidases of Thermoanaerobacter brockii are clustered in a common operon. Appl. Environ. Microbiol. 1997;63:3902–10. 
+23. Uchima CA, Tokuda G, Watanabe H, Kitamoto K, Arioka M. Heterologous Expression in Pichia pastoris and Characterization of an Endogenous Thermostable and High-Glucose-Tolerant β-Glucosidase from the Termite Nasutitermes takasagoensis. Appl. Environ. Microbiol. 2012;78:4288–93. 
+</pre>
+						      </div>
+						      <div class="modal-footer">
+						      	<a class="btn btn-default" aria-label="Close" data-dismiss="modal">Close</a>
+						      </div>
+						    </div>						    
+						  </div>
+						</div>
+						<!-- FIM MODALS -->
+
+						<!--MODAL DOWNLOADS -->
+						<div class="modal fade" id="download" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <div class="modal-header">						      	
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-family: Arial;"><span aria-hidden="true" style="font-family: Arial;">×</span></button>
+								<h3>Download</h3>
+						      </div>
+						      <div class="modal-body">
+						      	<label class="label label-default">Sequences:</label>
+						      	<a class="btn btn-success" target="_blank" href="data/betagdb_glucose_tolerant_sequences.fasta">Download FASTA file</a>
+
+						      	<br/><br/>
+
+						      	<label class="label label-default">Models:</label>
+						      	<a class="btn btn-warning" href="data/betagdb_pdb.zip">Download PDB files</a>
+
+						      </div>
+						      <div class="modal-footer">
+						      	<a class="btn btn-default" aria-label="Close" data-dismiss="modal">Close</a>
+						      </div>
+						    </div>						    
+						  </div>
+						</div>
+						<!-- FIM MODALS -->
+
+					</div>
+
+					<h4><b>β-glucosidase from:</b></h4>
+
+					
+					<select onchange="main(this.value)" class="form-control" id="organism">
+  					  <optgroup label="GH1">
+						<option value="Acidilobus_saccharovorans"><i>Acidilobus saccharovorans</i></option>
+						<option value="Bacillus_subtilis"><i>Bacillus subtilis</i></option>
+						<option value="Caldicellulosiruptor_bescii"><i>Caldicellulosiruptor bescii</i></option>
+						<option value="Exiguobacterium_antarcticum_B7"><i>Exiguobacterium antarcticum B7</i></option>
+						<option value="Fervidobacterium_islandicum"><i>Fervidobacterium islandicum</i></option>
+						<option value="Humicola_grisea_var_thermoidea"><i>Humicola grisea var. thermoidea</i></option>
+						<option value="Hypocrea_jecorina_Trichoderma_reesei"><i>Hypocrea jecorina (Trichoderma reesei)</i></option>
+						<option value="Metagenome_China_South_Sea"><i>Metagenome China South Sea</i></option>
+						<option value="Metagenome_hydrothermal_spring"><i>Metagenome hydrothermal spring</i></option>
+						<option value="Metagenome_Kusaya_gravy"><i>Metagenome Kusaya gravy</i></option>
+						<option value="Metagenome_soil"><i>Metagenome soil</i></option>
+						<option value="Metagenome_Turpan_Depression"><i>Metagenome Turpan Depression</i></option>
+						
+						<option value="Nasutitermes_takasagoensis"><i>Nasutitermes takasagoensis</i></option>
+						<option value="Neotermes_koshunensis"><i>Neotermes koshunensis</i></option>
+						<option value="Neurospora_crassa"><i>Neurospora crassa</i></option>
+						<option value="Pyrococcus_furiosus"><i>Pyrococcus furiosus</i></option>
+						
+						<option value="Thermoanaerobacter_brockii"><i>Thermoanaerobacter brockii</i></option>
+						<option value="Thermoanaerobacterium_aotearoense"><i>Thermoanaerobacterium aotearoense</i></option>
+						<option value="Thermoanaerobacterium_thermosaccharolyticum"><i>Thermoanaerobacterium thermosaccharolyticum</i></option>
+						<option value="Thermotoga_naphthophila"><i>Thermotoga naphthophila</i></option>
+						<option value="Thermotoga_petrophila"><i>Thermotoga petrophila</i></option>
+					  </optgroup>
+					  
+					  <optgroup label="GH3">
+					  	<option value="Mucor_circinelloides"><i>Mucor circinelloides</i></option>
+					  	<option value="Talaromyces_funiculosus_Penicillium_funiculosum"><i>Talaromyces funiculosus (Penicillium funiculosum)</i></option>
+					  </optgroup>	
+					</select>
+
+					<div><br/>
+				    		<table>
+				    			<tr>
+				    				<td style="text-align:right; padding:12px 10px">
+							    		<label class="label label-default">Show as:</label>
+							    	</td>
+							    	<td>
+							    		<button class="btn btn-success btn-xs" onclick="glviewer.setStyle({},{line:{}}); glviewer.render();">Lines</button>
+							    		<button class="btn btn-success btn-xs" onclick="glviewer.setStyle({},{stick:{}}); glviewer.render();">Sticks</button>
+							    		<button class="btn btn-success btn-xs" onclick="glviewer.setStyle({},{cartoon:{}}); glviewer.render();">Cartoon</button>
+							    		<button class="btn btn-success btn-xs" onclick="glviewer.setStyle({},{sphere:{}}); glviewer.render();">Sphere</button>
+				    				</td>
+				    			</tr>
+				    			<tr>
+				    				<td style="text-align:right; padding:12px 10px">
+				    					<label class="label label-default" title="Surface opacity">Surface:</label>
+				    				</td>
+				    				<td>
+							    		<button class="btn btn-default btn-xs" onclick="glviewer.removeAllSurfaces();">0%</button>
+							    		<button class="btn btn-default btn-xs" onclick="glviewer.removeAllSurfaces();glviewer.addSurface($3Dmol.SurfaceType, {opacity:0.25});">25%</button>
+							    		<button class="btn btn-default btn-xs" onclick="glviewer.removeAllSurfaces();glviewer.addSurface($3Dmol.SurfaceType, {opacity:0.50});">50%</button>
+							    		<button class="btn btn-default btn-xs" onclick="glviewer.removeAllSurfaces();glviewer.addSurface($3Dmol.SurfaceType, {opacity:0.75});">75%</button>
+							    		<button class="btn btn-default btn-xs" onclick="glviewer.removeAllSurfaces();glviewer.addSurface($3Dmol.SurfaceType, {opacity:1.00});">100%</button>
+							    	</td>
+							    </tr>
+							    <tr>
+							    	<td style="text-align:right; padding:12px 10px">
+							    		<label class="label label-default">Color:</label>
+							    	</td>
+							    	<td>
+							    		<button class="btn btn-default btn-xs" onclick="colorGray(glviewer);">Gray</button>
+							    		<button class="btn btn-default btn-xs" onclick="colorSpectrum(glviewer);">Spectrum</button>
+				    					<button class="btn btn-default btn-xs" onclick="colorSS(glviewer);">SS</button>
+				    				</td>
+				    			</tr>
+				    			<tr>
+							    	<td style="text-align:right; padding:12px 10px">
+							    		<label class="label label-default">Select:</label>
+							    	</td>
+							    	<td>
+										<div class="row" style="padding-top:5px" > 
+										  <div class="col-lg-6">
+										    <div class="input-group">
+										      <input type="text" placeholder="ID" id="sID" class="form-control input-sm" onform/>
+										      <span class="input-group-btn">
+										        <button class="btn btn-success btn-sm" type="button" onclick="selectID(glviewer)">Go!</button>
+										      </span>
+										    </div><!-- /input-group -->
+										  </div><!-- /.col-lg-6 -->
+										</div><!-- /.row -->
+
+										<div class="row" style="padding-top:5px" > 
+										  <div class="col-lg-6">
+										    <div class="input-group">
+										      <input type="text" placeholder="resn" id="sresn" class="form-control input-sm" />
+										      <span class="input-group-btn">
+										        <button class="btn btn-success btn-sm" type="button" onclick="selectResn(glviewer)">Go!</button>
+										      </span>
+										    </div><!-- /input-group -->
+										  </div><!-- /.col-lg-6 -->
+										</div><!-- /.row -->
+
+										<button style="margin-top:5px" class="btn btn-default btn-xs" onclick="selectGLU(glviewer);">Show all GLU</button>
+					    				 
+				    				</td>
+				    			</tr>
+				    		</table>
+				    	</div>
+				</aside>
+
+				<section class="col-md-9" id="principal">
+					<p style="color:#434857;letter-spacing:1px; font-size:12px">
+						<span class="label label-success" id="family">GH1</span>	β-GLUCOSIDASE FROM:			
+					</p>
+					<h1>
+						<span class="name_organism"></span>
+						<a href="#summary" class="sub_menu" data-toggle="modal" data-target="#summary">
+								<span class="glyphicon glyphicon-folder-open" aria-hidden="true" title="summary"></span>
+						</a>
+
+					<p style="color:#434857;font-size:12px; text-align:right" id="idModel"></p>
+
+						<!--MODAL summary -->
+						<div style="color:#333" class="modal fade" id="summary" tabindex="-1" role="dialog" aria-labelledby="summary">
+						  <div class="modal-dialog modal-lg">
+						    <div class="modal-content">
+						      <div class="modal-header">						      	
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close" style="font-family: Arial;"><span aria-hidden="true" style="font-family: Arial;">×</span></button>
+								<h3>Summary: <span class="name_organism"></span></h3>
+						      </div>
+					
+						      	<div id="summary_info">
+									<div class="modal-body"><iframe src="" id="summary_report" style="width:100%;height:500px"></iframe>
+						      	</div>
+								<br/>
+								<div class="citation alert alert-warning" role="alert">
+									<h5><strong>Modeled with MODELLER</strong></h5>
+									<p><strong>If you use any results in your research, please cite the relevant publications:</p></strong>
+
+									<p>Webb B, Sali A. Comparative Protein Structure Modeling Using MODELLER. Curr. Protoc. Bioinforma. Ed. Board Andreas Baxevanis Al. 2014;47:5.6.1–32.</p>
+									<p>Bitar M, Franco GR. A Basic Protein Comparative Three-Dimensional Modeling Methodological Workflow Theory and Practice. IEEE/ACM Trans Comput Biol Bioinform. 2014 Nov-Dec;11(6):1052-65. doi: 10.1109/TCBB.2014.2325018.</p>
+									<p>S.C. Lovell, I.W. Davis, W.B. Arendall III, P.I.W. de Bakker, J.M. Word, M.G. Prisant, J.S. Richardson and D.C. Richardson (2002) Structure validation by Calpha geometry: phi,psi and Cbeta deviation. Proteins: Structure, Function & Genetics. 50: 437-450.</p>
+<!--
+									<h5><strong>Modeled with RaptorX (http://raptorx.uchicago.edu/)</strong></h5>
+									<p><strong>If you use this model, please cite the following server and method papers:</strong></p>
+
+									<p>1. Morten Källberg, Haipeng Wang, Sheng Wang, Jian Peng, Zhiyong Wang, Hui Lu, and Jinbo Xu. Template-based protein structure modeling using the RaptorX web server. Nature Protocols 7, 1511-1522, 2012.</p>
+									<p>2. Jianzhu Ma, Sheng Wang, Feng Zhao, and Jinbo Xu. Protein threading using context-specific alignment potential. Bioinformatics (Proceedings of ISMB 2013), Vol. 29, Issue 13, pp. i257-i265. </p>
+									<p>3. Jian Peng and Jinbo Xu. A multiple-template approach to protein threading. PROTEINS, 2011 Jun;79(6):1930-9. doi: 10.1002/prot.23016. Epub 2011 Apr 4.</p>
+									<p>4. Jian Peng and Jinbo Xu. RaptorX: exploiting structure information for protein alignment by statistical inference. PROTEINS, 2011, Vol 79, Issue S10, pp. 161-171.</p>
+-->
+								</div>
+
+						      </div>
+						      <div class="modal-footer">
+						      	<a class="btn btn-default" aria-label="Close" data-dismiss="modal">Close</a>
+						      </div>
+						    </div>						    
+						  </div>
+						</div>
+						<!-- FIM MODALS -->
+
+					</h1>
+
+					<hr />
+
+					<div>
+						<div id="pdb"></div>
+				    	<!-- Metodo antigo --><!--<div 
+				    		id="pdb"
+				    		style="height: 600px; width: 100%; position: relative;" 
+				    		class='viewer_3Dmoljs' 
+				    		data-href='data/Acidilobus_saccharovorans.pdb' 
+				    		data-backgroundcolor='0x242830'  
+				    		data-style1='cartoon:color=spectrum' 
+				    		data-surface1='opacity:.4;color:white'>
+				    	</div>-->
+
+				    	
+
+					</div>
+				</section>
+
+			</div>
+		</div>
+		<footer>
+			&copy; 2016 - <strong>betagbd</strong> by Diego Mariano <i>et al.</i> - Laboratório de Bioinformática e Sistemas (DCC/UFMG)<br/><strong style="color:orange">Cite: </strong>Mariano <i>et al.</i> <strong>betagdb</strong>. Available at: < http://thames.dcc.ufmg.br/betagdb >.
+			<script type="text/javascript" src="js/3dmol.js"></script>
+			<script type="text/javascript" src="js/jquery.js"></script>
+			<script type="text/javascript" src="js/datatables.js"></script>
+			<script type="text/javascript" src="js/bootstrap.min.js"></script>
+			<script type="text/javascript" src="js/one.js"></script>
+
+			
+		</footer>
+	</body>
+</html>
